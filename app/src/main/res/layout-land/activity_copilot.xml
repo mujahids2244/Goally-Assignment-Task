@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.copilot.CopilotActivity">
+
+
+    <ImageView
+        android:id="@+id/ic_back"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/llCopilot"
+        android:layout_width="0dp"
+        android:background="#D2F7E1"
+        android:layout_height="@dimen/_40sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ic_back"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/ivCopilotLogo"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/copilot_icon"
+            android:paddingHorizontal="@dimen/_3sdp"
+            android:paddingVertical="@dimen/_7sdp" />
+
+
+        <TextView
+            android:id="@+id/ivCopilotTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:lines="2"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            app:fontFamily="@font/poppins_medium"
+            android:text="LongName’s CoPilot" />
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:id="@+id/schedule"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_25sdp"
+        app:layout_constraintEnd_toStartOf="@id/folders"
+        android:gravity="center"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+
+        app:layout_constraintTop_toBottomOf="@id/ic_back"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/calenderLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/calender"
+            android:paddingHorizontal="@dimen/_3sdp"
+            android:paddingVertical="@dimen/_7sdp" />
+
+
+        <TextView
+            android:id="@+id/heading"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:lines="2"
+            android:textColor="@color/black"
+            android:paddingHorizontal="5dp"
+            android:textSize="@dimen/_14sdp"
+            app:fontFamily="@font/poppins_medium"
+            android:text="Schedule" />
+
+        <ImageView
+            android:id="@+id/filterLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/filter_list"
+            android:paddingHorizontal="@dimen/_3sdp"
+            android:paddingVertical="@dimen/_7sdp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/folders"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_25sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        app:layout_constraintTop_toBottomOf="@id/ic_back"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/folderLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/folder_icon"
+            android:paddingHorizontal="@dimen/_3sdp"
+            android:paddingVertical="@dimen/_7sdp" />
+
+
+        <TextView
+            android:id="@+id/heading2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:lines="2"
+            android:textColor="@color/black"
+            android:paddingHorizontal="5dp"
+            android:textSize="@dimen/_14sdp"
+            app:fontFamily="@font/poppins_medium"
+            android:text="@string/folder" />
+
+        <ImageView
+            android:id="@+id/filterLogo2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/filter_list"
+            android:paddingHorizontal="@dimen/_3sdp"
+            android:paddingVertical="@dimen/_7sdp" />
+
+
+    </LinearLayout>
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ssRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constrainedHeight="true"
+            android:scrollbars="none"
+            android:paddingTop="15dp"
+            android:paddingBottom="10dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/schedule"
+            tools:itemCount="3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:listitem="@layout/ic_row_copilot_rv"
+
+            />
+
+
+    <TextView
+        android:id="@+id/noData"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:singleLine="true"
+        android:visibility="gone"
+        android:text="@string/no_data_found"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_17sdp"
+        app:layout_constraintTop_toBottomOf="@id/schedule" />
+
+
+    <include
+        android:id="@+id/menu"
+        layout="@layout/menu_layout" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
